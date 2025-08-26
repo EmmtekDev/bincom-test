@@ -1,0 +1,19 @@
+<h2>LGA Total Results</h2>
+<form method="POST">
+  <label>Select LGA:</label>
+  <select name="lga_id" required>
+    <% lgas.forEach(l => { %>
+      <option value="<%= l.lga_id %>"><%= l.lga_name %></option>
+    <% }) %>
+  </select>
+  <button type="submit">Check</button>
+</form>
+
+<% if (results) { %>
+  <h3>Summed Results</h3>
+  <ul>
+    <% results.forEach(r => { %>
+      <li><%= r.party_abbreviation %>: <%= r.total_score %></li>
+    <% }) %>
+  </ul>
+<% } %>

@@ -1,0 +1,13 @@
+<h2>Add New Results</h2>
+<form method="POST" action="/results/add">
+  <label>Polling Unit ID:</label>
+  <input type="text" name="polling_unit_uniqueid" required><br><br>
+
+  <h3>Enter Scores</h3>
+  <% parties.forEach(p => { %>
+    <label><%= p.party_abbreviation %>:</label>
+    <input type="number" name="party_<%= p.party_abbreviation %>" value="0"><br>
+  <% }) %>
+
+  <button type="submit">Submit</button>
+</form>

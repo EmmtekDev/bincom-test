@@ -1,0 +1,15 @@
+<h2>Polling Unit Results</h2>
+<form method="POST">
+  <label>Enter Polling Unit ID:</label>
+  <input type="text" name="id" required>
+  <button type="submit">Check</button>
+</form>
+
+<% if (results) { %>
+  <h3>Results</h3>
+  <ul>
+    <% results.forEach(r => { %>
+      <li><%= r.party_abbreviation %>: <%= r.party_score %></li>
+    <% }) %>
+  </ul>
+<% } %>
